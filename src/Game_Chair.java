@@ -18,6 +18,7 @@ public class Game_Chair {
             System.out.println("Your current Card is " + Player_2.getCurrentCard());
             if (i == 5) {
                 System.out.println("--------------------------------------------");
+                in.close();
                 break;
             }
             System.out.println("Would you like to draw another card? (" + counter + " remaining) (y/n)");
@@ -29,6 +30,7 @@ public class Game_Chair {
             }
             if (response.equals("n")) {
                 System.out.println("--------------------------------------------");
+                in.close();
                 break;
             } else if (response.equals("y")) {
                 System.out.println("\nPicking new card now...");
