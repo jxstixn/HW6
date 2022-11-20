@@ -10,7 +10,4 @@ public class Player {
         return currentCard;
     }
 
-    public void setCurrentCard(int currentCard) {
-        this.currentCard = currentCard;
-    }
 }

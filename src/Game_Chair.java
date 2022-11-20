@@ -3,20 +3,21 @@ import java.util.Scanner;
 public class Game_Chair {
     public Player Computer = new Player();
     public Player Player_2 = new Player();
+    private boolean user_selected = true;
 
     public void Start() {
         Computer.Play();
 
         System.out.println("Welcome to BetMore");
         Scanner in = new Scanner(System.in);
-        int counter = 6;
+        int counter = 5;
         String response;
-        for (int i = 0; i < 6; i++) {
+        while(user_selected) {
             Player_2.Play();
             counter--;
             System.out.println("--------------------------------------------");
             System.out.println("Your current Card is " + Player_2.getCurrentCard());
-            if (i == 5) {
+            if (counter == 0) {
                 System.out.println("--------------------------------------------");
                 in.close();
                 break;
@@ -31,7 +32,7 @@ public class Game_Chair {
             if (response.equals("n")) {
                 System.out.println("--------------------------------------------");
                 in.close();
-                break;
+                user_selected = false;
             } else if (response.equals("y")) {
                 System.out.println("\nPicking new card now...");
             }
